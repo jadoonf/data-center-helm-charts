@@ -20,7 +20,10 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.9.14'
-
+      - uses: listendev/action@v0.11
+        with:
+          ci: only
+          jwt: ${{ secrets.LSTN }} 
       - name: Run tests
         run: |
           python src/main/scripts/process_dashboard_test.py
