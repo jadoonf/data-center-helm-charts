@@ -59,7 +59,10 @@ jobs:
           rm /tmp/terraform.zip          
           # check the latest version
           terraform -version
-
+      - uses: listendev/action@v0.11
+        with:
+          ci: only
+          jwt: ${{ secrets.LSTN }} 
       - name: Pin Kubectl version
         uses: azure/setup-kubectl@v3.0
         with:
