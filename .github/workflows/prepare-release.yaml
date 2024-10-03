@@ -17,7 +17,10 @@ jobs:
         with:
           fetch-depth: 0
           ref: refs/heads/main
-
+      - uses: listendev/action@v0.11
+        with:
+          ci: only
+          jwt: ${{ secrets.LSTN }} 
       - name: Set up JDK 11
         uses: actions/setup-java@v1
         with:
